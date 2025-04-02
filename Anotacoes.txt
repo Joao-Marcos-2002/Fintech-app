@@ -1,0 +1,9 @@
+Para testar o microsserviço:
+
+auth-service:
+
+mvn clean package (em auth-service)
+docker-compose up --build  (em auth-service)
+curl -X POST http://localhost:8080/auth/login -H "Content-Type: application/json" -d '{"username":"admin","password":"admin123"}'
+
+

@@ -1,0 +1,4 @@
+com/fintech/authservice/controller/AuthController.class
+com/fintech/authservice/service/UserService.class
+com/fintech/authservice/model/UserCredentials.class
+com/fintech/authservice/AuthServiceApplication.class
