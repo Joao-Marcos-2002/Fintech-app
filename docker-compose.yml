@@ -1,0 +1,13 @@
+services:
+  transaction-service:
+    build: ./transaction-service
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    networks:
+      - fintech-network
+
+networks:
+  fintech-network:
+    driver: bridge
