@@ -58,4 +58,32 @@ Arquitetura de microsserviço, pronta para integração com outros serviços (ex
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 
 
+# Para testar o microsserviço:
+
+auth-service:
+
+mvn clean package (em auth-service)
+docker-compose up --build  (em auth-service)
+curl -X POST http://localhost:8080/auth/login -H "Content-Type: application/json" -d '{"username":"admin","password":"admin123"}'
+
+
+
+transaction-service:
+
+docker-compose up --build (em fintech-app na raiz)
+
+Em transaction-service rodar:
+
+Criar conta:
+curl -X POST "http://localhost:8080/api/accounts?accountId=123&owner=João"
+
+Consultar saldo:
+curl -X GET "http://localhost:8080/api/accounts/123"
+
+Fazer depósito:
+curl -X POST "http://localhost:8080/api/accounts/123/deposit?amount=100.0"
+
+Consultar saldo:
+curl -X POST "http://localhost:8080/api/accounts/123/withdraw?amount=50.0"
+
 
